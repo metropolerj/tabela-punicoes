@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabela de Punições - Metrópole RJ</title>
+    <meta name="description" content="Tabela completa de penalidades e infrações do servidor Metrópole RJ." />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui'] },
+                    colors: {
+                        brand: {
+                            500: '#d32f2f',
+                            700: '#b71c1c'
+                        },
+                        darkblack: '#1a1a1a', 
+                        deepgray: '#121212',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+        }
+        .table-container {
+            @apply w-full;
+        }
+        .table-header {
+            @apply bg-deepgray text-left text-sm font-semibold uppercase tracking-wider text-gray-300;
+        }
+        .table-cell {
+            /* Aumentando o padding vertical para criar o espaçamento */
+            @apply px-4 py-6;
+        }
+        .table-row-odd {
+            @apply bg-darkblack;
+        }
+        .table-row-even {
+            @apply bg-deepgray;
+        }
+        .text-punicao {
+            @apply font-bold;
+            color: #fde047;
+        }
+        .text-punicao-ban {
+            @apply font-bold;
+            color: #ef4444; 
+        }
+        .description-cell {
+            @apply text-gray-400 text-sm;
+        }
+        .custom-hr {
+            border-top: 1px solid rgba(107, 114, 128, 0.4);
+        }
+        /* Ajustes de alinhamento e larguras para as colunas */
+        .table-col-infraction {
+            width: 75%;
+            text-align: left;
+        }
+        .table-col-punishment {
+            width: 25%;
+            text-align: right;
+        }
+        .table-cell-infraction {
+            @apply pl-6 pr-2;
+        }
+        .table-cell-punishment {
+            @apply pl-2 pr-4;
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="bg-darkblack text-white font-sans">
+    <header class="bg-deepgray shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between px-6 py-3">
+            <div class="flex items-center gap-4">
+                <a href="https://regras-metropole-rj.gitbook.io/regrasmetropolerj" target="_blank" class="text-gray-400 hover:text-brand-500 font-medium flex items-center gap-2">
+                    <i class="fas fa-bars"></i>
+                    <span>Regras</span>
+                </a>
+            </div>
+            <nav class="flex items-center gap-4 text-lg font-medium">
+                <a href="https://discord.gg/fVTDFn9k4q" target="_blank" class="text-gray-400 hover:text-brand-500">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.instagram.com/metropolerjofc?igsh=MTlldWgyNjN0NnZ4ZQ==" target="_blank" class="text-gray-400 hover:text-brand-500">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-8">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <section id="tabela" class="mb-8">
+                <h1 class="text-4xl font-bold mb-2 text-center text-gray-200">Tabela de Punições</h1>
+                <p class="text-center text-gray-400 text-lg mb-8">
+                    Sistema de penalidades e infrações da Metrópole RJ
+                </p>
+                <hr class="custom-hr mb-8" />
+
+                <div class="bg-deepgray p-6 rounded-lg shadow-xl mt-8 mb-8 border border-gray-700">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
+                        <i class="fas fa-exclamation-triangle text-yellow-400"></i> Avisos Importantes
+                    </h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-400 text-sm">
+                        <li>No sistema de punições da Metrópole RJ, todas as penalidades são aplicadas de forma transparente e seguem procedimentos estabelecidos.</li>
+                        <li>Ao cometer uma infração na qual a punição seja somente prisão, a ADV será aplicada apenas após a 5ª infração pelo mesmo motivo.</li>
+                        <li>Na compra de algum item de remover punição ou unban no site, o histórico de prisão não será removido, sendo removidas apenas as advertências.</li>
+                        <li>Antes de comprar qualquer Remoção de punição no site, procure saber se a sua punição é passível dessa compra.</li>
+                        <li>O acúmulo do histórico de prisão é feito apenas para infrações iguais.</li>
+                    </ul>
+                </div>
+
+                <div class="flex items-start gap-8 mb-8">
+                    <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
+                            <i class="fas fa-circle text-blue-500 text-sm"></i> Procedimentos de Aplicação
+                        </h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                            <li><span class="font-semibold">Identificação:</span> Staff identifica a infração</li>
+                            <li><span class="font-semibold">Documentação:</span> Captura de evidências (screenshots, logs, vídeos)</li>
+                            <li><span class="font-semibold">Comunicação:</span> Informar ao jogador sobre a punição</li>
+                            <li><span class="font-semibold">Aplicação:</span> Executar a punição conforme tabela</li>
+                            <li><span class="font-semibold">Registro:</span> Documentar no sistema administrativo</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
+                            <i class="fas fa-balance-scale text-green-500"></i> Sistema de Recursos
+                        </h3>
+                        <p class="font-semibold text-gray-300 mb-2">Como recorrer:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li><span class="font-semibold">Prazo:</span> 10 dias após a aplicação</li>
+                            <li><span class="font-semibold">Formato:</span> Ticket de revisão no Discord ou email oficial</li>
+                            <li><span class="font-semibold">Análise:</span> Revisão por equipe adequada para análise</li>
+                            <li><span class="font-semibold">Decisão:</span> Resposta em até 48 horas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 text-center mt-8">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center justify-center gap-2">
+                        <i class="fas fa-circle text-blue-500 text-sm"></i> Sobre o Sistema de Punições
+                    </h3>
+                    <p class="text-gray-300 mb-6">
+                        O sistema de punições da Metrópole RJ foi criado para garantir um ambiente justo e organizado. Todas as penalidades são aplicadas de forma transparente e seguem procedimentos estabelecidos.
+                    </p>
+                    <div class="flex justify-around items-center text-gray-400 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Aplicação: Staff autorizada</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-clock"></i>
+                            <span>Última atualização: 28/08/2025</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Sistema transparente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 mb-6 mt-12">
+                    <i class="fas fa-stream text-gray-400 text-xl"></i>
+                    <h2 class="text-2xl font-semibold text-gray-200">Sistema de Punições - Metrópole RJ</h2>
+                </div>
+                <hr class="custom-hr mb-8" />
+            </section>
+
+            <div class="table-container overflow-x-auto rounded-lg shadow-xl border border-gray-700">
+                <table class="min-w-full">
+                    <thead>
+                        <tr class="table-header">
+                            <th class="table-cell table-col-infraction">Infração</th>
+                            <th class="table-cell table-col-punishment">Punição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">ABUSO DE BUG</span>
+                                <br/>
+                                <span class="description-cell">Abusar de bugs, erros da cidade ou mecânica de jogo para benefício próprio, de modo a afetar negativamente a cidade e prejudicar outros jogadores.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">ABUSO DE PODER</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando o cidadão tem um determinado poder/habilidade na cidade (Ex: Dr, segurar no H...) e utiliza esse poder/habilidade pra abusar ou beneficiar ou beneficiar alguém. Esses poderes devem ser usados apenas como ferramenta de seu trabalho.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">ANTI AMOR A VIDA</span>
+                                <br/>
+                                <span class="description-cell">Situação: Anti amor a vida é você fazer coisas, de forma proposital, que colocam sua vida em risco.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">AÇÃO INCORRETA</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando o player executa uma ação (ex: assalto, sequestro) de forma incorreta estando em desacordo com o que a regra exige, sem haver perigo real de vida. (ADM decide essa ação, se caso houver deverá ser aplicada a punição conforme ao RDM pois é uma infração mais grave.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">CAR PARKING</span>
+                                <br/>
+                                <span class="description-cell">Situação: Utilizar o veículo para que a pessoa não consiga se levantar, colocando o veículo em cima da pessoa ou fechar alguma passagem (porta ou caminho) com veículo impedindo a livre passagem.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">BAIT / COP BAIT</span>
+                                <br/>
+                                <span class="description-cell">Situação: Atrai alguém para uma emboscada, ou armadilha como o próprio nome já diz, com o intuito de tirar a vida do seu oponente, sendo ilegal e passível de punição.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">COMBAT LOGGING (CL)</span>
+                                <br/>
+                                <span class="description-cell">Combat logging ocorre quando um jogador se desconecta do servidor durante uma situação de ação ou combate para evitar punições ou perdas.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">ESTELIONATO / GOLPE</span>
+                                <br/>
+                                <span class="description-cell">Situação: Ocorre quando uma pessoa aplica um golpe no intuito de tirar vantagem, principalmente financeira. Esses golpes podem ser de vários exemplos, em forma de anúncios de vendas falsas ou de prestação de algum serviço que não seja prestado corretamente.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">FAKE PROFISSÃO</span>
+                                <br/>
+                                <span class="description-cell">Situação: Roubar ou conduzir veículos destinados a profissões legais bem como se passar por alguma dessas profissões sem o devido recrutamento, como polícia, médico ou mecânico.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">FAKE STAFF</span>
+                                <br/>
+                                <span class="description-cell">Situação: Se passar por algum membro da equipe staff seja através de conversar tentando ludibriar os players ou usar roupas/acessórios exclusivos da equipe staff.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">FLAMING</span>
+                                <br/>
+                                <span class="description-cell">Situação: Flaming é o ato de inflamar uma situação ou pessoa de forma negativa, utilizando ódio, falsas acusações, ofensas, ameaças, entre outros, com o intuito de denegrir a imagem da pessoa ou atacá-la diretamente.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">LEMBRAR DE AÇÃO</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando alguém está em uma ação e lembra de alguma ação anterior para benefício próprio ou para prejudicar o oponente. (Ex: "Lembrei que o fulano me deve dinheiro")</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">LOOT INDEVIDO</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando você retira algo que não era seu, sem permissão ou em um local indevido. (Ex: Roubar o carro de alguém, sem ter um motivo para isso).</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV + MULTA NO VALOR DOS ITENS</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">MAU USO DO CALL ADM</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando você utiliza o call adm para reportar algo que não é grave, ou que não precisa da intervenção da equipe, ou para fazer brincadeiras.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">100 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">MAU USO DOS CHATS DA CIDADE</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando você utiliza os chats da cidade para assuntos pessoais, brigas, xingamentos, ou assuntos que não são relevantes para o roleplay.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">METAGAMING</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando você utiliza informações externas ao jogo para obter vantagem dentro do jogo. (Ex: Assistir uma live de outro player e usar informações da live para encontrá-lo ou prejudicá-lo).</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">POWER GAMING</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando você realiza ações que são impossíveis na vida real, ou que vão contra a lógica do roleplay. (Ex: Cair de um prédio e sair correndo como se nada tivesse acontecido).</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">QUEBRA DE IMERSÃO</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando você quebra a imersão do roleplay com ações ou falas que não condizem com a realidade do jogo. (Ex: Falar sobre a vida real, ou sobre outros jogos, enquanto está em roleplay).</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">RDM</span>
+                                <br/>
+                                <span class="description-cell">Random Deathmatch - Situação: Quando você atira ou mata alguém sem motivo aparente, ou sem ter um roleplay que justifique a ação.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">VDM</span>
+                                <br/>
+                                <span class="description-cell">Vehicle Deathmatch - Situação: Quando você atropela ou mata alguém com o veículo sem motivo aparente, ou sem ter um roleplay que justifique a ação.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">250 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">Uso de fuzil na região sul</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quando você utiliza fuzil na região sul da cidade, que é uma área de segurança, onde o uso de armas de fogo é restrito.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">HACKER</span>
+                                <br/>
+                                <span class="description-cell">Situação: Utilização de qualquer tipo de software ou programa de terceiros para obter vantagem indevida no jogo.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
+                        </tr>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">DARK RP</span>
+                                <br/>
+                                <span class="description-cell">Situação: Quebra de regras de roleplay que resultam em ações extremas, como tortura, estupro, ou qualquer tipo de violência gratuita.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
+                        </tr>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction">
+                                <span class="font-bold text-gray-200">DUMP</span>
+                                <br/>
+                                <span class="description-cell">Situação: Utilização de bugs ou exploits para duplicar itens ou dinheiro dentro do jogo.</span>
+                            </td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-deepgray py-6 mt-16 text-center text-sm text-gray-400">
+        © 2025 Metrópole RJ. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

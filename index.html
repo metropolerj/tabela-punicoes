@@ -38,7 +38,6 @@
             @apply bg-deepgray text-left text-sm font-semibold uppercase tracking-wider text-gray-300;
         }
         .table-cell {
-            /* Aumentando o padding vertical para criar o espaçamento */
             @apply px-4 py-6;
         }
         .table-row-odd {
@@ -107,78 +106,8 @@
                     Sistema de penalidades e infrações da Metrópole RJ
                 </p>
                 <hr class="custom-hr mb-8" />
-
-                <div class="bg-deepgray p-6 rounded-lg shadow-xl mt-8 mb-8 border border-gray-700">
-                    <h2 class="text-2xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
-                        <i class="fas fa-exclamation-triangle text-yellow-400"></i> Avisos Importantes
-                    </h2>
-                    <ul class="list-disc list-inside space-y-2 text-gray-400 text-sm">
-                        <li>No sistema de punições da Metrópole RJ, todas as penalidades são aplicadas de forma transparente e seguem procedimentos estabelecidos.</li>
-                        <li>Ao cometer uma infração na qual a punição seja somente prisão, a ADV será aplicada apenas após a 5ª infração pelo mesmo motivo.</li>
-                        <li>Na compra de algum item de remover punição ou unban no site, o histórico de prisão não será removido, sendo removidas apenas as advertências.</li>
-                        <li>Antes de comprar qualquer Remoção de punição no site, procure saber se a sua punição é passível dessa compra.</li>
-                        <li>O acúmulo do histórico de prisão é feito apenas para infrações iguais.</li>
-                    </ul>
-                </div>
-
-                <div class="flex items-start gap-8 mb-8">
-                    <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
-                        <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
-                            <i class="fas fa-circle text-blue-500 text-sm"></i> Procedimentos de Aplicação
-                        </h3>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300">
-                            <li><span class="font-semibold">Identificação:</span> Staff identifica a infração</li>
-                            <li><span class="font-semibold">Documentação:</span> Captura de evidências (screenshots, logs, vídeos)</li>
-                            <li><span class="font-semibold">Comunicação:</span> Informar ao jogador sobre a punição</li>
-                            <li><span class="font-semibold">Aplicação:</span> Executar a punição conforme tabela</li>
-                            <li><span class="font-semibold">Registro:</span> Documentar no sistema administrativo</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
-                        <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
-                            <i class="fas fa-balance-scale text-green-500"></i> Sistema de Recursos
-                        </h3>
-                        <p class="font-semibold text-gray-300 mb-2">Como recorrer:</p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li><span class="font-semibold">Prazo:</span> 10 dias após a aplicação</li>
-                            <li><span class="font-semibold">Formato:</span> Ticket de revisão no Discord ou email oficial</li>
-                            <li><span class="font-semibold">Análise:</span> Revisão por equipe adequada para análise</li>
-                            <li><span class="font-semibold">Decisão:</span> Resposta em até 48 horas</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 text-center mt-8">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center justify-center gap-2">
-                        <i class="fas fa-circle text-blue-500 text-sm"></i> Sobre o Sistema de Punições
-                    </h3>
-                    <p class="text-gray-300 mb-6">
-                        O sistema de punições da Metrópole RJ foi criado para garantir um ambiente justo e organizado. Todas as penalidades são aplicadas de forma transparente e seguem procedimentos estabelecidos.
-                    </p>
-                    <div class="flex justify-around items-center text-gray-400 text-sm">
-                        <div class="flex items-center gap-2">
-                            <i class="fas fa-user-shield"></i>
-                            <span>Aplicação: Staff autorizada</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fas fa-clock"></i>
-                            <span>Última atualização: 02/09/2025</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Sistema transparente</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-2 mb-6 mt-12">
-                    <i class="fas fa-stream text-gray-400 text-xl"></i>
-                    <h2 class="text-2xl font-semibold text-gray-200">Sistema de Punições - Metrópole RJ</h2>
-                </div>
-                <hr class="custom-hr mb-8" />
             </section>
-
+            
             <div class="table-container overflow-x-auto rounded-lg shadow-xl border border-gray-700">
                 <table class="min-w-full">
                     <thead>
@@ -382,6 +311,70 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="bg-deepgray p-6 rounded-lg shadow-xl mt-8 mb-8 border border-gray-700">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle text-yellow-400"></i> Avisos Importantes
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-400 text-sm">
+                    <li>No sistema de punições da Metrópole RJ, todas as penalidades são aplicadas de forma transparente e seguem procedimentos estabelecidos.</li>
+                    <li>Ao cometer uma infração na qual a punição seja somente prisão, a ADV será aplicada apenas após a 5ª infração pelo mesmo motivo.</li>
+                    <li>Na compra de algum item de remover punição ou unban no site, o histórico de prisão não será removido, sendo removidas apenas as advertências.</li>
+                    <li>Antes de comprar qualquer Remoção de punição no site, procure saber se a sua punição é passível dessa compra.</li>
+                    <li>O acúmulo do histórico de prisão é feito apenas para infrações iguais.</li>
+                </ul>
+            </div>
+
+            <div class="flex items-start gap-8 mb-8">
+                <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
+                        <i class="fas fa-circle text-blue-500 text-sm"></i> Procedimentos de Aplicação
+                    </h3>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                        <li><span class="font-semibold">Identificação:</span> Staff identifica a infração</li>
+                        <li><span class="font-semibold">Documentação:</span> Captura de evidências (screenshots, logs, vídeos)</li>
+                        <li><span class="font-semibold">Comunicação:</span> Informar ao jogador sobre a punição</li>
+                        <li><span class="font-semibold">Aplicação:</span> Executar a punição conforme tabela</li>
+                        <li><span class="font-semibold">Registro:</span> Documentar no sistema administrativo</li>
+                    </ol>
+                </div>
+
+                <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
+                        <i class="fas fa-balance-scale text-green-500"></i> Sistema de Recursos
+                    </h3>
+                    <p class="font-semibold text-gray-300 mb-2">Como recorrer:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li><span class="font-semibold">Prazo:</span> 10 dias após a aplicação</li>
+                        <li><span class="font-semibold">Formato:</span> Ticket de revisão no Discord ou email oficial</li>
+                        <li><span class="font-semibold">Análise:</span> Revisão por equipe adequada para análise</li>
+                        <li><span class="font-semibold">Decisão:</span> Resposta em até 48 horas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 text-center mt-8">
+                <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center justify-center gap-2">
+                    <i class="fas fa-circle text-blue-500 text-sm"></i> Sobre o Sistema de Punições
+                </h3>
+                <p class="text-gray-300 mb-6">
+                    O sistema de punições da Metrópole RJ foi criado para garantir um ambiente justo e organizado. Todas as penalidades são aplicadas de forma transparente e seguem procedimentos estabelecidos.
+                </p>
+                <div class="flex justify-around items-center text-gray-400 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Aplicação: Staff autorizada</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-clock"></i>
+                        <span>Última atualização: 28/08/2025</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Sistema transparente</span>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
